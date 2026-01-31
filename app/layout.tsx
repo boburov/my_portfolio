@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "./boburov.png",
-        width: 1200,
-        height: 630,
+        width: 600,
+        height: 130,
         alt: "Shukurullo Boburov Portfolio",
       },
     ],
