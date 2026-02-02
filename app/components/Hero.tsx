@@ -47,7 +47,7 @@ const Hero = () => {
 
           <div className="flex flex-wrap gap-4 mt-4">
             <a
-              href="/cv.jpg"
+              href="./Boburov_Shukurullo_CV.pdf"
               download
               className="group relative px-8 py-4 bg-purple-600 text-white font-bold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95"
             >

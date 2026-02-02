@@ -130,7 +130,7 @@ const Home = () => {
                   {/* CTA */}
                   <div className="mt-6 flex flex-wrap gap-3">
                     <a
-                      href="/cv.jpg"
+                      href="./Boburov_Shukurullo_CV.pdf"
                       download
                       className="btn-primary"
                     >
