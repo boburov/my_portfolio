@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@rovixwb",
+    site: "@boburov_sh",
     title: "Shukurullo Boburov – Fullstack Developer 🧠",
     description:
       "Explore the creative journey of Fullstack JavaScript Developer Shukurullo Boburov – building scalable modern apps with Next.js & NestJS.",

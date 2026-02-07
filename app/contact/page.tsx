@@ -178,17 +178,17 @@ ${form.message}
                   <div>
                     <div className="text-sm text-white/80">Telegram</div>
                     <a
-                      href="https://t.me/rovixwb"
+                      href="https://t.me/boburov_sh"
                       target="_blank"
                       rel="noreferrer"
                       className="font-medium"
                     >
-                      @rovixwb
+                      @boburov_sh
                     </a>
                   </div>
                 </div>
                 <a
-                  href="https://t.me/rovixwb"
+                  href="https://t.me/boburov_sh"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/6 hover:bg-white/8 transition text-sm"

@@ -122,7 +122,7 @@ function NavItem({ label }: { label: string }) {
 function TalkButton({ fullWidth = false }: { fullWidth?: boolean }) {
   return (
     <Link
-      href="https://t.me/rovixwb?text=Salom%20Boburov!%20Men%20siz%20bilan%20hamkorlik%20qilmoqchiman.%20%F0%9F%94%A5"
+      href="https://t.me/boburov_sh?text=Salom%20Boburov!%20Men%20siz%20bilan%20hamkorlik%20qilmoqchiman.%20%F0%9F%94%A5"
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-primary ${fullWidth ? "w-full justify-center" : "ml-2"}`}

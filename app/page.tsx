@@ -5,10 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 
-import { Code, Download, Github, Linkedin, Mail, Plus, Rocket, VerifiedIcon } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Plus, Rocket, VerifiedIcon } from "lucide-react";
 
-import mardonbek from "../public/mardonbek.png";
-import muhammadali from "../public/muhammadali.png";
 import Projects from "./components/Projects";
 
 const Home = () => {
@@ -17,7 +15,6 @@ const Home = () => {
   }, []);
 
   const skills = [
-    // Frontend
     { name: "HTML", icon: "html" },
     { name: "CSS", icon: "css" },
     { name: "JavaScript", icon: "js" },
@@ -40,18 +37,17 @@ const Home = () => {
 
     // DevOps / Tools
     { name: "Git", icon: "git" },
-    { name: "GitHub", icon: "github" },
+    // { name: "GitHub", icon: "github" },
     { name: "Docker", icon: "docker" },
-    { name: "Netlify", icon: "netlify" },
+    // { name: "Netlify", icon: "netlify" },
     { name: "AWS S3", icon: "aws" },
 
-    // Design / Other
     { name: "Figma", icon: "figma" },
 
     // Languages you included
     { name: "Python", icon: "python" },
-    { name: "Ruby", icon: "ruby" },
-    { name: "Ruby on Rails", icon: "rails" },
+    // { name: "Ruby", icon: "ruby" },
+    // { name: "Ruby on Rails", icon: "rails" },
     { name: "Dart", icon: "dart" },
     { name: "Flutter", icon: "flutter" },
   ];
@@ -59,24 +55,24 @@ const Home = () => {
 
   const myTeam = [
     {
-      img: mardonbek,
+      img: "https://avatars.githubusercontent.com/u/166621808?v=4",
       name: "Mardonbek Khamidov",
       description:
-        "React va TypeScript muhandisi. Mijozlar ehtiyojini tezda anglaydi.",
-      projects: 26,
+        "Ruby on Rails",
+      projects: 1,
     },
     {
-      img: muhammadali,
+      img: "https://avatars.githubusercontent.com/u/192407019?v=4",
       name: "Muhammadali Jamolov",
-      description: "Next.js va UI dizayn mutaxassisi. Tajribali va samarali.",
-      projects: 18,
+      description: "Master of NextJs",
+      projects: 1,
     },
     {
       img: `https://avatars.githubusercontent.com/u/137058543?v=4`,
       name: "Boburov Shukurullo",
       description:
-        "NestJS va Frontend texnologiyalar bo‘yicha kuchli fullstack dasturchi.",
-      projects: 34,
+        "Flutter dev",
+      projects: 3,
     },
   ];
 
@@ -164,12 +160,11 @@ const Home = () => {
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-xs text-white/60">Projects</p>
-                  <p className="mt-1 text-xl font-bold text-indigo-400 montbold">4+</p>
+                  <p className="mt-1 text-xl font-bold text-indigo-400 montbold">3+</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 flex items-center gap-2">
                   <div>
                     <p className="text-xs text-white/60 flex items-center gap-2">
-                      <Rocket className="text-indigo-400" size={20} />
                       Delivery
                     </p>
                     <p className="text-sm font-semibold text-white/80">Fast</p>
@@ -178,7 +173,6 @@ const Home = () => {
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 flex items-center gap-2">
                   <div>
                     <p className="text-xs text-white/60 flex items-center gap-2">
-                      <Code size={20} className="text-indigo-400" />
                       Code
                     </p>
                     <p className="text-sm font-semibold text-white/80">Clean</p>
@@ -227,7 +221,7 @@ const Home = () => {
 
               <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
                 <p className="text-xs text-white/60">Telegram</p>
-                <p className="mt-1 font-semibold text-white">@rovixwb</p>
+                <p className="mt-1 font-semibold text-white">@boburov_sh</p>
               </div>
 
               <div className="mt-5 flex gap-3">
@@ -262,7 +256,7 @@ const Home = () => {
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="text-white/60">Telegram</span>
-                  <span className="font-medium">@rovixwb</span>
+                  <span className="font-medium">@boburov_sh</span>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="text-white/60">Phone</span>
@@ -297,7 +291,7 @@ const Home = () => {
                 />
 
 
-                <div className="absolute bottom-2 left-0 right-0 h-48 z-10 pointer-events-none">
+                <div className="absolute bottom-2 left-0 right-0 h-32 z-10 pointer-events-none">
                   <div className="w-[94%] mx-auto h-full rounded-xl bg-gradient-to-t from-[#5014c81a] to-[#7832ff26] backdrop-blur-3xl border-b-2 border-x-2 border-white/10" />
                 </div>
 
