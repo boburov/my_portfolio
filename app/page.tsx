@@ -118,7 +118,7 @@ const Home = () => {
                   <p className="mt-1 text-sm text-white/60">@boburov</p>
 
                   <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed">
-                    I build clean & functional web apps using <span className="text-white">NestJS</span>,{" "}
+                    I build clean & functional web, mobile apps using <span className="text-white">NestJS</span>,{" "}
                     <span className="text-white">Next.js</span> and{" "}
                     <span className="text-white">TailwindCSS</span>.
                   </p>
