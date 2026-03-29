@@ -34,6 +34,7 @@ export const loyihalar = [
     usingLanguage: ["nextjs", "tailwind"],
     type: "project",
     gitHb: "https://github.com/boburov",
+    netlify: ""
   }
 
 ];
