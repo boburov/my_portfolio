@@ -1,6 +1,8 @@
 import sevenedu from "../assets/sevenedu.png"
 import primeprint from "../assets/primeprint.png"
 import sevenedu_app from "../assets/sevenedu_mobile.png"
+import dexfilm from "../assets/dexfilm.png"
+
 
 export const loyihalar = [
   {
@@ -35,6 +37,18 @@ export const loyihalar = [
     type: "project",
     gitHb: "https://github.com/boburov",
     netlify: ""
+  },
+  {
+    id: 3,
+    img: dexfilm,
+    projectName: "DexFilm Kino Bot",
+    description:
+      "DexFilm kino bot bo'lin hozirda 2k foydalanuvchiga kinolarni tekin korish imkoniyatini beradi",
+    usingLanguage: ["json as db", "nodejs"],
+    type: "project",
+    gitHb: "https://github.com/boburov/kino_bot",
+    netlify: "https://t.me/DEX_Filmbot"
   }
+
 
 ];

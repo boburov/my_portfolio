@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { ExternalLink, Github, Sparkles, X } from "lucide-react";
-import { loyihalar } from "../data";
+import { loyihalar } from "../drata";
 
 const Projects = () => {
   useEffect(() => {
