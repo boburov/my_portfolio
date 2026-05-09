@@ -36,7 +36,7 @@ export const loyihalar = [
     projectName: "Sevenedu Mobile APP",
     description:
       "Ushbu loyihamiz sevenedu platfomasi uchun mobile versiaysi hisoblanadi.",
-    usingLanguage: ["nextjs", "tailwind"],
+    usingLanguage: ["Flutter", "Dart"],
     type: "project",
     gitHb: "https://github.com/boburov",
     netlify: ""
