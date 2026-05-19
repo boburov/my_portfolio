@@ -274,6 +274,8 @@ const Home = () => {
       </section>
 
 
+      <Projects />
+
       <section className="container mx-auto py-5">
         <div className="flex gap-8 items-start">
           <div className="w-[90%] grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -364,8 +366,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <Projects />
 
       <footer className="mt-20 py-6 text-center text-sm text-gray-500 border-t border-[#2f2f33]">
         <p>

@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { ExternalLink, Github, Sparkles, X } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, ExternalLink, Github, Sparkles, X } from "lucide-react";
 import { loyihalar } from "../data";
 
 const Projects = () => {
@@ -208,15 +209,15 @@ const Projects = () => {
 
 
       {/* Projects grid */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {loyihalar.map((project, i) => (
           <article
             key={project.id}
             data-aos={i % 2 === 0 ? "fade-up-right" : "fade-up-left"}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl"
+            className="group relative flex flex-col h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl"
           >
-            {/* Image */}
-            <div className="relative h-[260px]">
+            {/* Image area */}
+            <div className="relative h-[260px] shrink-0">
               <Image
                 src={project.img}
                 alt={project.projectName}
@@ -224,10 +225,25 @@ const Projects = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
-              {/* Hover buttons */}
-              <div className="absolute top-4 right-4 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
+              {/* Clickable overlay — entire image links to detail */}
+              <Link
+                href={`/projects/${project.slug}`}
+                aria-label={`${project.projectName} batafsil`}
+                className="absolute inset-0 z-10"
+              />
+
+              {/* Status badge */}
+              <div className="absolute top-4 left-4 z-20 pointer-events-none">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/40 backdrop-blur-md px-3 py-1 text-[10px] font-semibold text-white/90">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  {project.status}
+                </span>
+              </div>
+
+              {/* Hover buttons (above the link overlay) */}
+              <div className="absolute top-4 right-4 z-20 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
                 <a
                   href={project.gitHb}
                   target="_blank"
@@ -237,33 +253,46 @@ const Projects = () => {
                   <Github className="w-4 h-4" />
                   Code
                 </a>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIframeError(false);
-                    setPreview({ url: project.netlify, title: project.projectName });
-                  }}
-                  className="btn-secondary px-3 py-2 text-xs"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Live
-                </button>
-
+                {project.netlify && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIframeError(false);
+                      setPreview({ url: project.netlify, title: project.projectName });
+                    }}
+                    className="btn-secondary px-3 py-2 text-xs"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Live
+                  </button>
+                )}
               </div>
             </div>
 
             {/* Content */}
-            <div className="p-5">
-              <h3 className="text-lg font-bold text-white/95">
-                {project.projectName}
-              </h3>
+            <div className="p-5 flex flex-col flex-1">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="block group/title"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-lg font-bold text-white/95 group-hover/title:text-indigo-300 transition">
+                    {project.projectName}
+                  </h3>
+                  <ArrowUpRight className="w-4 h-4 text-white/40 group-hover/title:text-indigo-300 transition shrink-0 mt-1" />
+                </div>
 
-              <p className="mt-2 text-sm text-white/65 line-clamp-3 leading-relaxed">
-                {project.description}
-              </p>
+                <p className="mt-1 text-xs text-white/50 line-clamp-1">
+                  {project.tagline}
+                </p>
+
+                <p className="mt-3 text-sm text-white/65 line-clamp-2 leading-relaxed">
+                  {project.description}
+                </p>
+              </Link>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.usingLanguage.map((tech: string, idx: number) => (
+                {project.usingLanguage.slice(0, 4).map((tech: string, idx: number) => (
                   <span
                     key={idx}
                     className="text-[11px] px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/75 hover:bg-white/10 transition"
@@ -271,28 +300,42 @@ const Projects = () => {
                     #{tech}
                   </span>
                 ))}
+                {project.usingLanguage.length > 4 && (
+                  <span className="text-[11px] px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/55">
+                    +{project.usingLanguage.length - 4}
+                  </span>
+                )}
               </div>
 
-              {/* Mobile buttons (always visible on small screens) */}
-              <div className="mt-5 flex gap-3 md:hidden">
+              {/* Action row — pinned to bottom */}
+              <div className="mt-auto pt-5 flex items-center gap-3">
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="flex-1 btn-primary justify-center text-xs"
+                >
+                  Batafsil
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
                 <a
                   href={project.gitHb}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 btn-secondary justify-center"
+                  className="btn-secondary shrink-0"
+                  aria-label="GitHub"
                 >
                   <Github className="w-4 h-4" />
-                  Code
                 </a>
-                <a
-                  href={project.netlify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 btn-secondary justify-center"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Live
-                </a>
+                {project.netlify && (
+                  <a
+                    href={project.netlify}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary shrink-0"
+                    aria-label="Live"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </div>
           </article>
