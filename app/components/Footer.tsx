@@ -1,53 +1,47 @@
-"use client";
+import Link from "next/link";
 
-import { Github, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import { profile, socials } from "../data/site";
+import { ThemeToggle } from "./theme/ThemeToggle";
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer className="relative bg-black pt-24 pb-12 overflow-hidden border-t border-white/10">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
-
+    <footer className="border-t border-line">
       <div className="container">
-        <div className="flex flex-col gap-12 mb-20">
-             <h2 className="text-maximal leading-none text-white uppercase break-all">
-                Let&apos;s <span className="text-gray-800">build</span>
-                <br />
-                <span className="text-gradient">Something.</span>
-             </h2>
-             
-             <div className="flex flex-col md:flex-row gap-8 md:items-end justify-between">
-                <div>
-                    <span className="text-gray-500 text-sm uppercase tracking-widest block mb-4">Say Hello</span>
-                    <a href="mailto:info@boburov.uz" className="text-3xl md:text-5xl font-bold text-white hover:text-purple-400 transition-colors flex items-center gap-4 group">
-                        info@boburov.uz
-                        <ArrowUpRight className="w-8 h-8 md:w-12 md:h-12 opacity-50 group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-2 transition-all" />
-                    </a>
-                </div>
+        <div className="flex flex-col gap-8 py-10 md:flex-row md:items-center md:justify-between md:gap-6">
+          <div>
+            <Link href="/" className="text-sm font-semibold tracking-[0.02em]">
+              BOBUROV<span className="text-accent-ink">.DEV</span>
+            </Link>
+            <p className="t-mono mt-1.5 text-fg-faint">{profile.role}</p>
+          </div>
 
-                <div className="flex gap-4">
-                    <SocialLink href="https://github.com/boburov" icon={<Github />} />
-                    <SocialLink href="https://linkedin.com/in/boburovdev" icon={<Linkedin />} />
-                    <SocialLink href="https://twitter.com" icon={<Twitter />} />
-                </div>
-             </div>
+          <nav aria-label="Social links">
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target={s.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    className="link-underline t-mono text-fg-muted transition-colors hover:text-accent-ink"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <ThemeToggle />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 text-sm">
-            <p>© {new Date().getFullYear()} Boburov Shukurullo. All rights reserved.</p>
-            <p className="flex items-center gap-1">
-                Made with <span className="text-red-500">♥</span> & Next.js
-            </p>
+        <div className="flex flex-col gap-2 border-t border-line py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="t-mono text-fg-faint">
+            © {new Date().getFullYear()} {profile.name}
+          </p>
+          <p className="t-mono text-fg-faint">Built with Next.js and Tailwind CSS</p>
         </div>
       </div>
     </footer>
   );
-}
-
-function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
-    return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:scale-110 transition-all">
-            {icon}
-        </a>
-    )
 }

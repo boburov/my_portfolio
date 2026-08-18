@@ -5,7 +5,7 @@
     "excerpt": "Discover why NestJS is the go-to framework for enterprise-grade Node.js applications.",
     "content": "NestJS provides a modular structure, dependency injection, and a robust ecosystem...",
     "date": "2024-03-15",
-    "author": "Boburov Shukurullo",
+    "author": "Boburov Shukurillo",
     "tags": ["NestJS", "Backend", "Node.js"],
     "readTime": 5,
     "imageUrl": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop"
@@ -16,7 +16,7 @@
     "excerpt": "A deep dive into utility-first CSS and how it speeds up development.",
     "content": "Tailwind CSS has revolutionized the way we style web applications...",
     "date": "2024-04-02",
-    "author": "Boburov Shukurullo",
+    "author": "Boburov Shukurillo",
     "tags": ["CSS", "Tailwind", "Frontend"],
     "readTime": 4,
     "imageUrl": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop"
@@ -27,7 +27,7 @@
     "excerpt": "Exploring the latest features in Next.js 14, including Server Actions and Partial Prerendering.",
     "content": "Next.js 14 brings significant performance improvements and developer experience upgrades...",
     "date": "2024-05-10",
-    "author": "Boburov Shukurullo",
+    "author": "Boburov Shukurillo",
     "tags": ["Next.js", "React", "Frontend"],
     "readTime": 6,
     "imageUrl": "https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1964&auto=format&fit=crop"
@@ -38,7 +38,7 @@
     "excerpt": "Why you should be using TypeScript in your React projects for better maintainability.",
     "content": "TypeScript adds static typing to JavaScript, catching errors early and improving code quality...",
     "date": "2024-06-20",
-    "author": "Boburov Shukurullo",
+    "author": "Boburov Shukurillo",
     "tags": ["TypeScript", "React", "JavaScript"],
     "readTime": 7,
     "imageUrl": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2128&auto=format&fit=crop"
