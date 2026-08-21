@@ -56,7 +56,13 @@ export const metadata: Metadata = {
   other: {
     "google-site-verification": "MaugEz5g-WDQQUU6ft4Q4Lf5dFcTSjwdDyJA1UKPo64",
   },
-  icons: { icon: "/boburov.png", apple: "/boburov.png" },
+  icons: {
+    icon: [
+      { url: "/logo.svg", type: "image/svg+xml" },
+      { url: "/boburov.png" },
+    ],
+    apple: "/boburov.png",
+  },
   openGraph: {
     type: "profile",
     title,
