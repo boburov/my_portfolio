@@ -222,3 +222,60 @@ npx tsc --noEmit -p tsconfig.json 2>&1 | tail -10; curl -s -o /dev/null -w "home
 <sub>session `c9b2897e` · branch `main` · 2 ta qadam</sub>
 
 ---
+
+## 2026-10-10 00:16 — <pasted_content id="3513"> <!-- Google tag (gtag.js) --> <script async
+
+**So'rov**
+
+> <pasted_content id="3513">
+> <!-- Google tag (gtag.js) -->
+> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18504146074"></script>
+> <script>
+>   window.dataLayer = window.dataLayer || [];
+>   function gtag(){dataLayer.push(arguments);}
+>   gtag('js', new Date());
+>
+>   gtag('config', 'AW-18504146074');
+> </script>
+> </pasted_content id="3513">
+>
+> set this script to my index file
+>
+>
+>
+>
+> "
+>
+> <pasted_content id="3513">
+> Improve your return on investment by measuring conversions
+> Set up a Google tag on your website to enable key features of your Google products, including conversion measurement. Learn more about Google tags
+> Install manually RECOMMENDED
+> Below is the Google tag for this account. Copy and paste it in the code of every page of your website, immediately after the <head> element. Don’t add more than one Google tag to each page.
+> </pasted_content id="3513">
+>
+> "
+>
+> google saying that so put it rigth way possible and write commit and push
+
+**O'zgargan fayllar (1)**
+
+- `.claude/worktrees/google-tag-conversion-tracking-439c83/app/layout.tsx` — tahrirlandi
+
+**Buyruqlar (2)**
+
+```sh
+ls; ls app | head -30; grep -rn "<head\|<Script\|next/script" --include=*.tsx --include=*.html --include=*.ts -l . 2>/dev/null | grep -v node_modules | head; gi…
+npx tsc --noEmit 2>&1 | tail -5; git add app/layout.tsx && git commit -q -m "feat: add Google tag (gtag.js) for conversion tracking Co-Authored-By: Claude Sonne…
+```
+
+**Natija**
+
+I added the Google tag to [app/layout.tsx](app/layout.tsx), committed it, and pushed it to `claude/google-tag-conversion-tracking-439c83`. I couldn't type-check or build it, because dependencies aren't installed in this worktree.
+
+This is a Next.js app and has no `index.html`. The root layout is the one file every page goes through, so the tag loads once site-wide. It sits as the first thing inside `<head>`, which is where Google asks for it. I kept the same two parts as your snippet: the async loader and the `config` call with `AW-18504146074`. The ID is written once, in a `GOOGLE_TAG_ID` constant at the top of the file.
+
+The change is on the branch, not on `main`. Merge it and deploy before checking the tag in Google Ads.
+
+<sub>session `332190d8` · branch `claude/google-tag-conversion-tracking-439c83` · 5 ta qadam</sub>
+
+---
