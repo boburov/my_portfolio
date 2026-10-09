@@ -21,6 +21,8 @@ const mono = JetBrains_Mono({
   variable: "--font-mono-src",
 });
 
+const GOOGLE_TAG_ID = "AW-18504146074";
+
 const title = `${profile.name} — ${profile.role}`;
 const description =
   "Full-stack engineer from Uzbekistan building web, mobile and backend systems with Next.js, NestJS, PostgreSQL and Flutter. Available for remote and freelance work.";
@@ -122,6 +124,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
+        {/* Google tag (gtag.js) — must sit right after <head>, only once per page. */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GOOGLE_TAG_ID}');`,
+          }}
+        />
         <ThemeScript />
       </head>
       <body>
